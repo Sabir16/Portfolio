@@ -1,25 +1,23 @@
-/* Reset basique pour éviter les marges par défaut  */
+/* Le reset basique pour éviter les marges par défaut */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing:border-box;
 }
-/* Corps de la page  */
+/* Corps de la page */
 body {
-    font-family: 'Arial', sans-serif; /* Police simple et lisible */
+    font-family: 'Arial', sans-serif;
     line-height: 1.6;
-    color: #333; /* Texte gris foncé */
-    background-color: #f4f4f4; /* fond léger */
+    color: #333;
+    background-color: #f4f4f4;
     height: 100vh;
     display: flex;
     flex-direction: column;
     overflow: hidden;
 }
-
-
-/* Navigation */
+/* Barre de navigation */
 nav {
-    background-color: #333; /* Fond sombre */
+    background-color: #333;
     color: white;
     padding: 1rem 2rem;
     display: flex;
@@ -31,23 +29,24 @@ nav {
 
 nav h1 {
     font-size: 1.5rem;
+    font-weight: bold;
 }
 
 nav ul {
     list-style: none;
     display: flex;
-    gap: 1.5rem; /* Espacement entre liens */
+    gap: 1.5rem; /* l'espace entre les liens */
 }
 
 nav a {
     color: white;
     text-decoration: none;
     font-weight: bold;
-    transition: color 0.3s ease; /* Animation douce au survol */
+    transition: color 0.3s ease;
 }
 
 nav a:hover {
-    color: #007bff; /* Bleu au survol */
+    color: #007bff;
 }
 
 /* Section principale */
@@ -66,31 +65,17 @@ main {
     min-height: 0;
 }
 
-/* Premier div : à gauche */
 main > div:first-child {
-    flex: 1; /* Prend la moitié de l'espace */
-    text-align: left; /* Alignement à gauche pour le texte */
+    flex: 1;
+    text-align: left;
 }
 
-main h1 {
+main  h1 {
     font-size: 2.5rem;
     margin-bottom: 0.5rem;
     color: #222;
     font-weight: bold;
 }
-
-main h3 {
-    font-size: 1.2rem;
-    color: #555;
-    font-style: italic;
-}
-
-/* Second div : à Droite */
-main > div:last-child {
-    flex: 1;
-    text-align: left;
-}
-
 main p {
     font-size: 1rem;
     line-height: 1.6;
@@ -98,8 +83,45 @@ main p {
     margin-bottom: 2rem;
     max-width: 100%; /* Utilise toute la largeur disponible */
 }
+main ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+main ul li {
+    margin-bottom: 0.5rem;
+}
+main ul li a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+main ul li a:hover {
+    color: #0056b3;
+}
 
-main button {
+main > div:last-child {
+    flex: 1;
+    text-align: center;
+}
+
+main form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+main form label {
+    font-weight: bold;
+    color: #333;
+}
+main form input,
+main form textarea {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+main form button {
     background-color: #007bff;
     color: white;
     border: none;
@@ -108,29 +130,24 @@ main button {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    align-self: flex-start; /* Aligne le bouton à gauche dans son conteneur */
 }
-
-main button:hover {
+main form button:hover {
     background-color: #0056b3;
     transform: translateY(-2px);
 }
-
 /* Responsive: Empile les colonnes sur le mobile */
 @media(max-width: 768px) {
     body {
         height: 100vh;
     }
-    main  {
-        flex-direction:  column;
+    main {
+        flex-direction: column;
         padding: 1rem;
         gap: 1rem;
     }
-    
     main h1 {
         font-size: 2rem;
     }
-
     main p {
         font-size: 0.9rem;
     }
@@ -140,9 +157,8 @@ main button:hover {
     footer {
         padding: 0.75rem 1rem;
     }
-} 
-
-
+}
+/* Pied de page */
 footer {
     background-color: #333;
     color: white;
@@ -158,32 +174,28 @@ footer ul {
     gap: 1rem;
     margin-bottom: 1rem;
 }
-
 footer img {
     width: 30px;
     height: 30px;
     filter: invert(1); /* Rend les icônes blanches si elles sont sombre */
     transition: transform 0.3s ease;
 }
-
 footer img:hover {
     transform: scale(1.1); /* Agrandissement au survol */
 }
-
 
 /* Responsive pour mobiles */
 @media (max-width: 768px) {
     nav {
         flex-direction: column;
-        padding: 1rem;
     }
-
-    nav ul {
-        margin-top: 1rem;
-        gap: 1rem;
+    main > div:first-child {
+        text-align: center;
     }
-
-    footer ul  {
-        flex-wrap: wrap;
+    main > div:last-child {
+        text-align: center;
+    }
+    main form {
+        align-items: center;
     }
 }
