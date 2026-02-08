@@ -200,6 +200,7 @@ footer img:hover {
 }
 
 /* Responsive */
+/* Responsive */
 @media (max-width: 768px) {
     nav {
         flex-direction: column;
@@ -218,4 +219,13 @@ footer img:hover {
     .card-links {
         min-height: auto;
     }
+    
+    /* Réorganisation pour grouper les liens après chaque projet */
+    .card-info:nth-of-type(1) { order: 1; }
+    .card-links:nth-of-type(1) { order: 2; }
+    .card-info:nth-of-type(2) { order: 3; }
+    .card-links:nth-of-type(2) { order: 4; }
+    .card-info:nth-of-type(3) { order: 5; }
+    .card-links:nth-of-type(3) { order: 6; }
+    /* Ajoutez des règles similaires si vous avez plus de 3 projets, ex. :nth-of-type(4) { order: 7; } etc. */
 }
