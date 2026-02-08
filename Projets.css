@@ -1,0 +1,221 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Barre de navigation - fixe */
+nav {
+    position: sticky;
+    top: 0;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+nav h1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #ffd700;
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+}
+
+/* Main : deux parties, gauche plus grande */
+main {
+    flex: 1;
+    display: flex;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    margin: 0 1rem;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+    overflow-y: auto;
+    min-height: 0;
+}
+
+.main-left {
+    flex: 1.5;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    min-width: 0;
+}
+
+.main-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    min-width: 0;
+}
+
+/* Cards */
+.card {
+    border-radius: 10px;
+    padding: 1.25rem;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid rgba(0,0,0,0.06);
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+.card-info {
+    background: #fff;
+    flex: 1;
+    min-height: 120px;
+}
+
+.card-info .card-title {
+    font-size: 1.25rem;
+    color: #1e3c72;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.card-info .card-desc {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 0.75rem;
+}
+
+.card-info .card-tech {
+    font-size: 0.9rem;
+    color: #2a5298;
+}
+
+.card-tech strong {
+    color: #333;
+}
+
+.card-links {
+    background: linear-gradient(135deg, #f8f9ff 0%, #eef1ff 100%);
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    justify-content: center;
+    flex: 1;
+    min-height: 120px;
+}
+
+.card-links a {
+    display: inline-block;
+    text-align: center;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+}
+
+.link-project {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    box-shadow: 0 2px 10px rgba(102, 126, 234, 0.3);
+}
+
+.link-project:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 14px rgba(102, 126, 234, 0.45);
+}
+
+.link-github {
+    background: #1e3c72;
+    color: white;
+}
+
+.link-github:hover {
+    background: #2a5298;
+    transform: translateY(-1px);
+}
+
+/* Footer - non fixe, en bas de page */
+footer {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: white;
+    padding: 1rem 2rem;
+    text-align: center;
+    flex-shrink: 0;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+}
+
+footer ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 0;
+}
+
+footer img {
+    width: 30px;
+    height: 30px;
+    filter: invert(1);
+    transition: transform 0.3s ease;
+}
+
+footer img:hover {
+    transform: scale(1.2) rotate(5deg);
+    filter: invert(1) drop-shadow(0 0 5px rgba(255, 215, 0, 0.8));
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        padding: 0.75rem 1rem;
+    }
+    main {
+        flex-direction: column;
+        padding: 1rem;
+        margin: 0 0.5rem;
+    }
+    .main-left,
+    .main-right {
+        flex: none;
+    }
+    .card-info,
+    .card-links {
+        min-height: auto;
+    }
+}
